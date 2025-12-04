@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>DANDD sp. z o.o. – Malinowski &amp; Piotrowski</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="DANDD sp. z o.o. – ogólnobudowlane realizacje pod klucz, domy energooszczędne i w technologii pasywnej, trwałe i solidne fundamenty oraz prace wykończeniowe. Malinowski &amp; Piotrowski." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050b1c;
+      --bg-alt: #0c1429;
+      --gold: #d7b56c;
+      --gold-soft: rgba(215,181,108,0.16);
+      --text: #f5f5f5;
+      --muted: #a9b1c6;
+      --error: #ff6b6b;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 18px 45px rgba(0,0,0,0.55);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #101b39 0%, #030712 55%, #000 100%);
+      color: var(--text);
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 12px 40px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 4px 18px;
+      gap: 10px;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-mark {
+      width: 46px;
+      height: 70px;
+      border-radius: 999px;
+      border: 1px solid var(--gold-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .logo-mark::before,
+    .logo-mark::after {
+      content: "";
+      position: absolute;
+      top: 20%;
+      bottom: 20%;
+      width: 7px;
+      border-radius: 8px;
+      border: 2px solid var(--gold);
+      border-top: none;
+      border-bottom: none;
+    }
+    .logo-mark::before { left: 12px; }
+    .logo-mark::after { right: 12px; }
+    .logo-mark span {
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      height: 2px;
+      background: var(--gold);
+      box-shadow: 0 52px 0 var(--gold);
+    }
+
+    .logo-text-main {
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .logo-text-sub {
+      font-size: 0.63rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      margin-top: 1px;
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      gap: 12px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 1px;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 0;
+      background: var(--gold);
+      transition: width 0.2s ease-out;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 20px;
+      align-items: stretch;
+      margin-bottom: 32px;
+    }
+
+    .hero-card {
+      background: linear-gradient(140deg, rgba(215,181,108,0.12), rgba(4,8,24,0.95));
+      border-radius: var(--radius-lg);
+      padding: 22px 18px 18px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(215,181,108,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-kicker {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.26em;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .hero-title {
+      font-size: clamp(1.4rem, 4.4vw, 2rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .hero-title span {
+      color: var(--gold);
+    }
+
+    .hero-slogan {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .hero-bullets {
+      list-style: none;
+      font-size: 0.78rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-bullets li {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 5px;
+    }
+
+    .hero-bullets li::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      border: 1px solid var(--gold);
+      cursor: pointer;
+      background: transparent;
+      color: var(--text);
+      transition: background 0.18s ease-out, color 0.18s ease-out, transform 0.08s;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #09101e;
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      background: #f0cf88;
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost:hover {
+      background: var(--gold-soft);
+      transform: translateY(-1px);
+    }
+
+    .hero-note {
+      font-size: 0.68rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .hero-gallery {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid #111827;
+      background: radial-gradient(circle at top left, #1f2937 0%, #020617 60%);
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 3px;
+      min-height: 210px;
+    }
+
+    .hero-gallery.figure {
+      margin: 0;
+    }
+
+    .hero-gallery figure {
+      margin: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.05);
+      transform: scale(1.02);
+    }
+
+    .hero-gallery figcaption {
+      position: absolute;
+      left: 8px;
+      bottom: 8px;
+      font-size: 0.62rem;
+      background: rgba(3,7,18,0.72);
+      padding: 3px 7px;
+      border-radius: 999px;
+      color: var(--muted);
+    }
+
+    .hero-gallery .stack {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 3px;
+    }
+
+    .section {
+      margin-bottom: 34px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 12px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .section-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+    }
+
+    .section-sub {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+    }
+
+    .service-card {
+      background: var(--bg-alt);
+      border-radius: var(--radius-md);
+      border: 1px solid #111827;
+      padding: 14px 12px 12px;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.55);
+    }
+
+    .service-title {
+      font-size: 0.84rem;
+      margin-bottom: 3px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .service-tagline {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .service-list {
+      font-size: 0.75rem;
+      color: var(--text);
+      list-style: none;
+    }
+
+    .service-list li {
+      margin-bottom: 3px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 8px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #111827;
+      background: #020617;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      transform: scale(1.03);
+    }
+
+    .gallery-item span {
+      position: absolute;
+      left: 8px;
+      bottom: 8px;
+      font-size: 0.62rem;
+      background: rgba(3,7,18,0.72);
+      padding: 3px 7px;
+      border-radius: 999px;
+      color: var(--muted);
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    form {
+      background: var(--bg-alt);
+      border-radius: var(--radius-md);
+      border: 1px solid #111827;
+      padding: 14px 12px 12px;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.55);
+    }
+
+    .form-row {
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.7rem;
+      margin-bottom: 4px;
+      color: var(--muted);
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      border-radius: 999px;
+      border: 1px solid #1f2937;
+      padding: 7px 11px;
+      background: #020617;
+      color: var(--text);
+      font-size: 0.75rem;
+      outline: none;
+      transition: border 0.16s ease-out, box-shadow 0.16s;
+    }
+
+    textarea {
+      min-height: 90px;
+      border-radius: 12px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 1px rgba(215,181,108,0.5);
+    }
+
+    .form-inline {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-size: 0.65rem;
+      color: var(--muted);
+    }
+
+    .form-inline input[type="checkbox"] {
+      margin-top: 2px;
+      width: 14px;
+      height: 14px;
+      accent-color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .form-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    .form-status {
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .contact-info {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .contact-info h3 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .contact-info p {
+      margin-bottom: 5px;
+    }
+
+    .contact-highlight {
+      font-size: 0.8rem;
+      color: var(--text);
+      margin-top: 8px;
+    }
+
+    footer {
+      margin-top: 26px;
+      border-top: 1px solid #111827;
+      padding-top: 10px;
+      font-size: 0.68rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-gallery {
+        min-height: 190px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+
+      .page {
+        padding-inline: 12px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .hero-gallery {
+        grid-template-columns: 1fr;
+      }
+      .hero-gallery .stack {
+        grid-template-rows: 1fr;
+      }
+      .hero-gallery img {
+        height: 160px;
+      }
+      .gallery-item img {
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo-wrap">
+        <div class="logo-mark" aria-hidden="true">
+          <span></span>
+        </div>
+        <div>
+          <div class="logo-text-main">DANDD sp. z o.o.</div>
+          <div class="logo-text-sub">Malinowski &amp; Piotrowski</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#uslugi">Usługi</a>
+        <a href="#realizacje">Realizacje</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-card">
+          <div class="hero-kicker">ogólnobudowlane realizacje</div>
+          <h1 class="hero-title">
+            Dom, który jest <span>trwały, mocny, solidny</span>.
+          </h1>
+          <p class="hero-slogan">
+            DANDD sp. z o.o. – Malinowski &amp; Piotrowski. Budujemy domy energooszczędne i w technologii pasywnej, od fundamentów po wykończenie. „Twardo zbudowany” to dla nas standard, nie obietnica.
+          </p>
+          <ul class="hero-bullets">
+            <li>Kompleksowe prace ogólnobudowlane i żelbetowe.</li>
+            <li>Docieplenia, dachy, stolarka, elewacje.</li>
+            <li>Wykończenia pod klucz – od posadzek po drzwi.</li>
+            <li>Realizacje domów energooszczędnych i pasywnych.</li>
+          </ul>
+          <div class="hero-actions">
+            <button class="btn-primary" type="button" onclick="document.getElementById('kontakt').scrollIntoView({behavior:'smooth'})">
+              Zapytaj o termin
+            </button>
+            <button class="btn-ghost" type="button" onclick="document.getElementById('realizacje').scrollIntoView({behavior:'smooth'})">
+              Zobacz realizacje
+            </button>
+          </div>
+          <p class="hero-note">
+            Każdy projekt traktujemy jak własny dom – prosty w utrzymaniu, trwały, dobrze przemyślany konstrukcyjnie.
+          </p>
+        </div>
+
+        <!-- mini-galeria w hero -->
+        <div class="hero-gallery" aria-label="Przykładowe realizacje DANDD">
+          <figure>
+            <img src="images/20251201_133610.jpg" alt="Fundamenty żelbetowe w trakcie realizacji" />
+            <figcaption>Fundamenty – twardo zbudowane</figcaption>
+          </figure>
+          <div class="stack">
+            <figure>
+              <img src="images/79563749-b98a-4a96-a46e-5fc7ba6b48c7.png" alt="Projekt elewacji frontowej budynku w zabudowie bliźniaczej" />
+              <figcaption>Elewacja frontowa</figcaption>
+            </figure>
+            <figure>
+              <img src="images/aeb869e0-48e7-4aa3-8ee0-231e89e71338.png" alt="Przekrój energooszczędnego okna PVC" />
+              <figcaption>Stolarka okienna – profil pasywny</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- USŁUGI -->
+      <section id="uslugi" class="section">
+        <div class="section-header">
+          <h2 class="section-title">usługi ogólnobudowlane</h2>
+          <p class="section-sub">Od pierwszego wykopu do ostatniej klamki – także w standardzie pasywnym.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <h3 class="service-title">Konstrukcja &amp; stan surowy</h3>
+            <p class="service-tagline">Solidne fundamenty, które trzymają cały dom.</p>
+            <ul class="service-list">
+              <li>Ławy i ściany fundamentowe, izolacje, drenaże.</li>
+              <li>Stropy, słupy, wieńce, schody żelbetowe.</li>
+              <li>Murowanie ścian nośnych i działowych.</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3 class="service-title">Dach, elewacja, stolarka</h3>
+            <p class="service-tagline">Trwała powłoka budynku i ciepła, szczelna stolarka.</p>
+            <ul class="service-list">
+              <li>Więźby, pokrycia, obróbki blacharskie.</li>
+              <li>Docieplenia, tynki, płyty tarasowe i kostka.</li>
+              <li>Montaż okien, drzwi i bram garażowych.</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3 class="service-title">Wykończenia &amp; pod klucz</h3>
+            <p class="service-tagline">Wnętrza gotowe do zamieszkania od pierwszego dnia.</p>
+            <ul class="service-list">
+              <li>Wylewki, posadzki, zabudowy GK.</li>
+              <li>Malowanie, tynki dekoracyjne, płytki.</li>
+              <li>Montaż drzwi, listew, osprzętu i zabudów.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- REALIZACJE / GALERIA -->
+      <section id="realizacje" class="section">
+        <div class="section-header">
+          <h2 class="section-title">realizacje</h2>
+          <p class="section-sub">Kilka kadrów z budów, projektów i ekspozycji materiałów.</p>
+        </div>
+
+        <div class="gallery-grid" aria-label="Galeria zdjęć z realizacji DANDD">
+          <div class="gallery-item">
+            <img src="images/20251201_133641.jpg" alt="Zbrojenie i fundamenty w zimowych warunkach" />
+            <span>Fundamenty i zbrojenie</span>
+          </div>
+          <div class="gallery-item">
+            <img src="images/20251201_133856.jpg" alt="Fragment ławy fundamentowej z hydroizolacją" />
+            <span>Hydroizolacje</span>
+          </div>
+          <div class="gallery-item">
+            <img src="images/20251201_134005.jpg" alt="Detal zbrojenia słupa żelbetowego" />
+            <span>Detale konstrukcyjne</span>
+          </div>
+          <div class="gallery-item">
+            <img src="images/20251203_121220.jpg" alt="Ekspozycja kostki brukowej i płyt tarasowych" />
+            <span>Nawierzchnie i tarasy</span>
+          </div>
+          <div class="gallery-item">
+            <img src="images/20251203_110423.jpg" alt="Ekspozycja kolorów i oklein drzwiowych" />
+            <span>Wykończenia drzwi</span>
+          </div>
+          <div class="gallery-item">
+            <img src="images/79563749-b98a-4a96-a46e-5fc7ba6b48c7.png" alt="Projekt elewacji frontowej budynku" />
+            <span>Projekt – elewacja frontowa</span>
+          </div>
+          <div class="gallery-item">
+            <img src="images/0ae42c33-cdfb-41e7-9597-48771b57736d.png" alt="Projekt elewacji ogrodowej budynku" />
+            <span>Projekt – elewacja ogrodowa</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- KONTAKT -->
+      <section id="kontakt" class="section">
+        <div class="section-header">
+          <h2 class="section-title">kontakt</h2>
+          <p class="section-sub">Jeden formularz dzieli Twój projekt od solidnego wykonania.</p>
+        </div>
+
+        <div class="contact-wrapper">
+          <!-- FORMULARZ BEZ OUTLOOKA – FormSubmit -->
+          <form action="https://formsubmit.co/dandd.biuro@gmail.com" method="POST">
+            <!-- ustawienia formsubmit -->
+            <input type="hidden" name="_subject" value="Zapytanie ze strony DANDD" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://dandd-dev.github.io/dandd/#kontakt" />
+            <input type="hidden" name="_template" value="table" />
+
+            <div class="form-row">
+              <label for="name">Imię i nazwisko</label>
+              <input id="name" name="Imię i nazwisko" type="text" autocomplete="name" required />
+            </div>
+
+            <div class="form-row">
+              <label for="email">Adres e-mail</label>
+              <input id="email" name="E-mail" type="email" autocomplete="email" required />
+            </div>
+
+            <div class="form-row">
+              <label for="phone">Telefon (opcjonalnie)</label>
+              <input id="phone" name="Telefon" type="text" autocomplete="tel" />
+            </div>
+
+            <div class="form-row">
+              <label for="message">Krótki opis inwestycji</label>
+              <textarea id="message" name="Opis inwestycji" required></textarea>
+            </div>
+
+            <div class="form-row">
+              <label class="form-inline">
+                <input id="rodo" type="checkbox" name="Zgoda RODO" value="Tak" required />
+                <span>Wyrażam zgodę na kontakt w sprawie oferty. Dane wykorzystamy wyłącznie w celu przygotowania odpowiedzi.</span>
+              </label>
+            </div>
+
+            <div class="form-footer">
+              <button class="btn-primary" type="submit">Wyślij zapytanie</button>
+              <p class="form-status">
+                Wiadomość zostanie wysłana na: <strong>dandd.biuro@gmail.com</strong>
+              </p>
+            </div>
+          </form>
+
+          <aside class="contact-info">
+            <h3>DANDD sp. z o.o.</h3>
+            <p>Ogólnobudowlane realizacje, wykończenia oraz domy energooszczędne i pasywne.</p>
+            <p><strong>E-mail:</strong> <a href="mailto:dandd.biuro@gmail.com">dandd.biuro@gmail.com</a></p>
+            <p><strong>Adres strony:</strong><br />https://dandd-dev.github.io/dandd/</p>
+            <p class="contact-highlight">
+              Szukasz wykonawcy, który buduje „twardo” – od fundamentów, przez stolarkę, aż po ostatnią listwę?
+              Napisz kilka zdań o swojej inwestycji, a wrócimy z konkretną propozycją.
+            </p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© <span id="year"></span> DANDD sp. z o.o. – Malinowski &amp; Piotrowski</span>
+      <span>Trwały. Mocny. Solidny. Twardo zbudowany.</span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
